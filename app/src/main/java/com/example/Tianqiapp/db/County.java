@@ -1,5 +1,7 @@
 package com.example.Tianqiapp.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by Z Archer on 2017/7/11.
  */

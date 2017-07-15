@@ -1,6 +1,8 @@
 package com.example.Tianqiapp.db;
 
 
+import org.litepal.crud.DataSupport;
+
 public class Province extends DataSupport {
     private int id;
     private String provinceName;
@@ -22,7 +24,7 @@ public class Province extends DataSupport {
         this.provinceName = provinceName;
     }
 
-    public int getProvinceCode() {
+    public int getProvinceCode(int id) {
         return provinceCode;
     }
 
