@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <litepal>
-    <dbname value="weather" />
-    <version value="1" />
+    <dbname value="tianqiapp.db" ></dbname>
+    <version value="1" ></version>
     <list>
         <mapping class="com.example.Tianqiapp.db.Province" />
         <mapping class="com.example.Tianqiapp.db.City"/>
-        <mapping class="com.example.Tianqiapp.db.County/>"
+        <mapping class="com.example.Tianqiapp.db.County"/>
     </list>
 </litepal>
