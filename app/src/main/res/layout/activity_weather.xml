@@ -7,38 +7,57 @@
         android:layout_height="match_parent"
         android:id="@+id/bing_pic_img"
         android:scaleType="centerCrop"/>
-
-    <ScrollView
-        android:id="@+id/weather_layout"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:scrollbars="none">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:fitsSystemWindows="true">
-
-
-            <include layout="@layout/title" />
-
-            <TextView
-                android:id="@+id/textView"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <ScrollView
+                android:id="@+id/weather_layout"
                 android:layout_width="match_parent"
-                android:layout_height="380dp" />
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none">
 
-            <include layout="@layout/now" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:fitsSystemWindows="true">
 
-            <include layout="@layout/hourly_forecast" />
 
-            <include layout="@layout/forecast" />
+                    <include layout="@layout/title" />
 
-            <include layout="@layout/aqi" />
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="380dp" />
 
-            <include layout="@layout/suggestion" />
+                    <include layout="@layout/now" />
 
-        </LinearLayout>
-    </ScrollView>
+                    <include layout="@layout/hourly_forecast" />
+
+                    <include layout="@layout/forecast" />
+
+                    <include layout="@layout/aqi" />
+
+                    <include layout="@layout/suggestion" />
+
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/choose_area_fragment"
+            android:name="com.example.Tianqiapp.ChooseAreaFragment"
+            android:layout_gravity="start"/>
+    </android.support.v4.widget.DrawerLayout>
+
+
+
 </FrameLayout>
