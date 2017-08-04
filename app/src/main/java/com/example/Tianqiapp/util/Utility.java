@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.example.Tianqiapp.db.City;
 import com.example.Tianqiapp.db.County;
 import com.example.Tianqiapp.db.Province;
+import com.example.Tianqiapp.gson.BingPic;
 import com.example.Tianqiapp.gson.Weather;
 import com.google.gson.Gson;
 
@@ -78,6 +79,18 @@ public class Utility {
             JSONArray jsonArray=jsonObject.getJSONArray("HeWeather5");
             String weatherContent = jsonArray.getJSONObject(0).toString();
             return new Gson().fromJson(weatherContent,Weather.class);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static BingPic handleBingPicResponse(String response){
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("images");
+            String bingPicContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(bingPicContent,BingPic.class);
+
         }catch (Exception e){
             e.printStackTrace();
         }
